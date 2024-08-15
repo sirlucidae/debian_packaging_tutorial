@@ -1,0 +1,4 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://www.example.com/software/project
+Upstream-Name: Shareware
+Upstream-Contact: Lucas Z. <lucas_z@debian.org>

@@ -1,0 +1,88 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package hithere
+dpkg-buildpackage: info: source version 1.0-1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Lucas Z. <lucas_z@debian.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_auto_clean
+	make -j4 clean
+make[1]: Entering directory '/home/luke/Templates/debian-packaging-tutorial/hithere-1.0'
+rm -f hithere
+make[1]: Leaving directory '/home/luke/Templates/debian-packaging-tutorial/hithere-1.0'
+   dh_clean
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building hithere using existing ./hithere_1.0.orig.tar.gz
+dpkg-source: info: using patch list from debian/patches/series
+dpkg-source: info: building hithere in hithere_1.0-1.debian.tar.xz
+dpkg-source: info: building hithere in hithere_1.0-1.dsc
+ debian/rules build
+dh build
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+   dh_auto_build
+	make -j4 "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/luke/Templates/debian-packaging-tutorial/hithere-1.0'
+cc -o hithere hithere.c
+make[1]: Leaving directory '/home/luke/Templates/debian-packaging-tutorial/hithere-1.0'
+   dh_auto_test
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/home/luke/Templates/debian-packaging-tutorial/hithere-1.0'
+/usr/bin/make DESTDIR=$(pwd)/debian/hithere prefix=/usr install
+make[2]: Entering directory '/home/luke/Templates/debian-packaging-tutorial/hithere-1.0'
+install hithere /home/luke/Templates/debian-packaging-tutorial/hithere-1.0/debian/hithere/usr/bin
+install hithere.1 /home/luke/Templates/debian-packaging-tutorial/hithere-1.0/debian/hithere/usr/share/man/man1
+make[2]: Leaving directory '/home/luke/Templates/debian-packaging-tutorial/hithere-1.0'
+make[1]: Leaving directory '/home/luke/Templates/debian-packaging-tutorial/hithere-1.0'
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_dwz -a
+dwz: debian/hithere/usr/bin/hithere: .debug_info section not present
+   dh_strip -a
+   dh_makeshlibs -a
+   dh_shlibdeps -a
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'hithere-dbgsym' in '../hithere-dbgsym_1.0-1_amd64.deb'.
+dpkg-deb: building package 'hithere' in '../hithere_1.0-1_amd64.deb'.
+ dpkg-genbuildinfo -O../hithere_1.0-1_amd64.buildinfo
+ dpkg-genchanges -O../hithere_1.0-1_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload (original source is included)
+Now running lintian hithere_1.0-1_amd64.changes ...
+W: hithere: copyright-without-copyright-notice
+W: hithere-dbgsym: debug-file-with-no-debug-symbols [usr/lib/debug/.build-id/28/6d51e37e97fca70d45301af968901f1ccfcbda.debug]
+W: hithere source: file-without-copyright-information Makefile [debian/copyright]
+W: hithere source: file-without-copyright-information debian/changelog [debian/copyright]
+W: hithere source: file-without-copyright-information debian/control [debian/copyright]
+W: hithere source: file-without-copyright-information debian/copyright [debian/copyright]
+W: hithere source: file-without-copyright-information debian/hithere.dirs [debian/copyright]
+W: hithere source: file-without-copyright-information debian/patches/1a [debian/copyright]
+W: hithere source: file-without-copyright-information debian/patches/series [debian/copyright]
+W: hithere source: file-without-copyright-information debian/rules [debian/copyright]
+W: hithere source: file-without-copyright-information debian/source/format [debian/copyright]
+W: hithere source: file-without-copyright-information hithere.1 [debian/copyright]
+W: hithere source: file-without-copyright-information hithere.c [debian/copyright]
+W: hithere: initial-upload-closes-no-bugs [usr/share/doc/hithere/changelog.Debian.gz:1]
+W: hithere: wrong-bug-number-in-closes #XXXXXX [usr/share/doc/hithere/changelog.Debian.gz:3]
+Finished running lintian.

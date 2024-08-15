@@ -1,2 +1,2 @@
-# debian_packaging_tutorial
-Testing environment for Debian packaging.
+# Debian Packaging Tutorial
+Basic example of a Debian package for learning purposes.

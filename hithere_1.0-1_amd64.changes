@@ -1,0 +1,37 @@
+Format: 1.8
+Date: Thu, 15 Aug 2024 17:02:15 +1000
+Source: hithere
+Binary: hithere hithere-dbgsym
+Architecture: source amd64
+Version: 1.0-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Lucas Z. <lucas_z@debian.org>
+Changed-By: Lucas Z. <lucas_z@debian.org>
+Description:
+ hithere    - greet user
+Changes:
+ hithere (1.0-1) UNRELEASED; urgency=medium
+ .
+   * Initial release. (Closes: #XXXXXX)
+Checksums-Sha1:
+ 7bf498c398e1d55e406800938ccfdd8433d9ef45 749 hithere_1.0-1.dsc
+ 2dcd65497a12a3ea03223f52186447bd5733dce9 617 hithere_1.0.orig.tar.gz
+ d92690c8d21d7eec42c1ab37ba518a6b4674fbdd 1704 hithere_1.0-1.debian.tar.xz
+ c7ba6c09c4d93128fbb2b971377383f28b4cdb7d 2156 hithere-dbgsym_1.0-1_amd64.deb
+ e68467f96d9d90c06b19d3b723c5de3c0f38a8c4 5341 hithere_1.0-1_amd64.buildinfo
+ adca90f701e6438a41463ab39cf62cf13cb10442 3132 hithere_1.0-1_amd64.deb
+Checksums-Sha256:
+ 46f4a375bb78d3be002d311ee6fa052152fce1c8ddd43bfb2ccc6f3237e15932 749 hithere_1.0-1.dsc
+ 63062b582a712f169f37a5f52a41aa3ca9a405aafb8aa837bc906fa413b62cdb 617 hithere_1.0.orig.tar.gz
+ ec2b2dd94a53ea3b8fbcf9b4ff5e0129d7f2758bdf8be7248ff54ab08345e16c 1704 hithere_1.0-1.debian.tar.xz
+ 5e7b6a38bc5ecebf4d25d3da1aced3bd77b206004676a27f987a248ce064a868 2156 hithere-dbgsym_1.0-1_amd64.deb
+ b0de23403d0e09bcd8a3d79d13a2aa85537ba156f1fd29a19c7f9a8f6bbb2c3a 5341 hithere_1.0-1_amd64.buildinfo
+ d881b737e4059689f6b8a7ef03f60127fafcd58ea8b02be22ac75e2dcf54804d 3132 hithere_1.0-1_amd64.deb
+Files:
+ 4164e0d45b653f615110dbe8e995c824 749 misc optional hithere_1.0-1.dsc
+ 5b2830fa1fcd44ce489774771625526e 617 misc optional hithere_1.0.orig.tar.gz
+ e72b95a91703148e127cdefc06a3c19d 1704 misc optional hithere_1.0-1.debian.tar.xz
+ ac7abd4d9f83c6c01b5307a14d4aa8cd 2156 debug optional hithere-dbgsym_1.0-1_amd64.deb
+ 6e36591a6c7602a0a9b33144a52c98d9 5341 misc optional hithere_1.0-1_amd64.buildinfo
+ 85740585d68cae69473605addf151ec1 3132 misc optional hithere_1.0-1_amd64.deb

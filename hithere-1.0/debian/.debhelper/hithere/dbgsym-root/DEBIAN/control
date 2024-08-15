@@ -1,0 +1,12 @@
+Package: hithere-dbgsym
+Source: hithere
+Version: 1.0-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Lucas Z. <lucas_z@debian.org>
+Installed-Size: 15
+Depends: hithere (= 1.0-1)
+Section: debug
+Priority: optional
+Description: debug symbols for hithere
+Build-Ids: 286d51e37e97fca70d45301af968901f1ccfcbda
